@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ViewControlerUebung" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,48 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Rcw-Dx-QNn">
+                                <rect key="frame" x="208" y="76" width="185" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185" id="N4Y-Kd-Fbl"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Red"/>
+                                    <segment title="Green"/>
+                                    <segment title="Blue"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentButton:" destination="BYZ-38-t0r" eventType="valueChanged" id="H5d-Jj-6Ls"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UkG-EY-1jA">
+                                <rect key="frame" x="277" y="151" width="39" height="30"/>
+                                <state key="normal" title="Show">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showHide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8U-0P-DuN"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UkG-EY-1jA" firstAttribute="top" secondItem="Rcw-Dx-QNn" secondAttribute="bottom" constant="47" id="DBi-jg-YXN"/>
+                            <constraint firstAttribute="centerX" secondItem="UkG-EY-1jA" secondAttribute="centerX" constant="3.5" id="GDn-ab-txT"/>
+                            <constraint firstItem="Rcw-Dx-QNn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="56" id="HKI-hN-2ph"/>
+                            <constraint firstAttribute="centerX" secondItem="Rcw-Dx-QNn" secondAttribute="centerX" constant="-0.5" id="JtU-Cm-p5o"/>
+                            <constraint firstAttribute="centerY" secondItem="UkG-EY-1jA" secondAttribute="centerY" constant="134" id="mw1-SW-8Oh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="colorSelect" destination="Rcw-Dx-QNn" id="ZlY-yx-jIk"/>
+                        <outlet property="colorView" destination="Rcw-Dx-QNn" id="iPb-c4-8f0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="938" y="629"/>
         </scene>
     </scenes>
 </document>
